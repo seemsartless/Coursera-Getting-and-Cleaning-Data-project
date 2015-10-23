@@ -16,6 +16,6 @@ I created this repo to store and share my files for the Coursera Getting and Cle
 
 ### Files in the repo
 - ```run_analysis.R``` - my R program to analyse the input data files and create a tidy output data file 
-- ```CodeBook.mda``` - a code book that describes the variables, the data, and the transformations the script does to clean up the data
+- ```CodeBook.md``` - a code book that describes the variables, the data, and the transformations the script does to clean up the data
 - ```README.md``` - this file!
 
