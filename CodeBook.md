@@ -26,9 +26,86 @@ The first two columns describe the unique combination of:
 The third column is a numeric representation of the Activity_Label:
 - (col 3) - Activity_ID - an integer ranging from 1 to 6 - ie 1 represents Activity_Label = WALKING
 
-The final set of columns are the average values observed for this subject doing this activity:
+The final set of columns are the average values observed for this subject doing this activity. More details on how these raw values were collected and processed is available in the ```features_info.txt``` file included in the original source data file.
 
 Column #|Header string|Units|Description
 :------:|-------------|:---:|-----------
-4|tBodyAcc-mean()-X|unit|Descritption of the tBodyAcc-mean()-X
-5|tBodyAcc-mean()-Y|unit|Description of the tBodyAcc-mean()-Y
+4|tBodyAcc-mean()-X|time|The average value for the mean body acceleration (X-axis) measurement.
+5|tBodyAcc-mean()-Y|time|The average value for the mean body acceleration (Y-axis) measurement.
+6|tBodyAcc-mean()-Z|time|The average value for the mean body acceleration (Z-axis) measurement.
+7|tBodyAcc-std()-X|time|The average value for the standard deviation body acceleration (X-axis) measurement.
+8|tBodyAcc-std()-Y|time|The average value for the standard deviation body acceleration (Y-axis) measurement.
+9|tBodyAcc-std()-Z|time|The average value for the standard deviation body acceleration (Z-axis) measurement.
+10|tGravityAcc-mean()-X|time|The average value for the mean gravity acceleration (X-axis) measurement.
+11|tGravityAcc-mean()-Y|time|The average value for the mean gravity acceleration (Y-axis) measurement.
+12|tGravityAcc-mean()-Z|time|The average value for the mean gravity acceleration (Z-axis) measurement.
+13|tGravityAcc-std()-X|time|The average value for the standard deviation gravity acceleration (X-axis) measurement.
+14|tGravityAcc-std()-Y|time|The average value for the standard deviation gravity acceleration (Y-axis) measurement.
+15|tGravityAcc-std()-Z|time|The average value for the standard deviation gravity acceleration (Z-axis) measurement.
+16|tBodyAccJerk-mean()-X|time|The average value for the mean body jerk acceleration (X-axis) measurement.
+17|tBodyAccJerk-mean()-Y|time|The average value for the mean body jerk acceleration (Y-axis) measurement.
+18|tBodyAccJerk-mean()-Z|time|The average value for the mean body jerk acceleration (Z-axis) measurement.
+19|tBodyAccJerk-std()-X|time|The average value for the standard deviation body jerk acceleration (X-axis) measurement.
+20|tBodyAccJerk-std()-Y|time|The average value for the standard deviation body jerk acceleration (Y-axis) measurement.
+21|tBodyAccJerk-std()-Z|time|The average value for the standard deviation body jerk acceleration (Z-axis) measurement.
+22|tBodyGyro-mean()-X|time|The average value for the mean body gyroscope (X-axis) measurement.
+23|tBodyGyro-mean()-Y|time|The average value for the mean body gyroscope (Y-axis) measurement.
+24|tBodyGyro-mean()-Z|time|The average value for the mean body gyroscope (Z-axis) measurement.
+25|tBodyGyro-std()-X|time|The average value for the standard deviation body gyroscope (X-axis) measurement.
+26|tBodyGyro-std()-Y|time|The average value for the standard deviation body gyroscope (Y-axis) measurement.
+27|tBodyGyro-std()-Z|time|The average value for the standard deviation body gyroscope (Z-axis) measurement.
+28|tBodyGyroJerk-mean()-X|time|The average value for the mean body jerk gyroscope (X-axis) measurement.
+29|tBodyGyroJerk-mean()-Y|time|The average value for the mean body jerk gyroscope (Y-axis) measurement.
+30|tBodyGyroJerk-mean()-Z|time|The average value for the mean body jerk gyroscope (Z-axis) measurement.
+31|tBodyGyroJerk-std()-X|time|The average value for the standard deviation body jerk gyroscope (X-axis) measurement.
+32|tBodyGyroJerk-std()-Y|time|The average value for the standard deviation body jerk gyroscope (Y-axis) measurement.
+33|tBodyGyroJerk-std()-Z|time|The average value for the standard deviation body jerk gyroscope (Z-axis) measurement.
+34|tBodyAccMag-mean()|time|The average value for the mean body acceleration measurement.
+35|tBodyAccMag-std()|time|The average value for the standard deviation body acceleration measurement.
+36|tGravityAccMag-mean()|time|The average value for the mean gravity acceleration measurement.
+37|tGravityAccMag-std()|time|The average value for the standard deviation gravity acceleration measurement.
+38|tBodyAccJerkMag-mean()|time|The average value for the mean body jerk acceleration measurement.
+39|tBodyAccJerkMag-std()|time|The average value for the standard deviation body jerk acceleration measurement.
+40|tBodyGyroMag-mean()|time|The average value for the mean body gyroscope measurement.
+41|tBodyGyroMag-std()|time|The average value for the standard deviation body gyroscope measurement.
+42|tBodyGyroJerkMag-mean()|time|The average value for the mean body jerk gyroscope measurement.
+43|tBodyGyroJerkMag-std()|time|The average value for the standard deviation body jerk gyroscope measurement.
+44|fBodyAcc-mean()-X|frequency|The average value for the mean body acceleration (X-axis) measurement.
+45|fBodyAcc-mean()-Y|frequency|The average value for the mean body acceleration (Y-axis) measurement.
+46|fBodyAcc-mean()-Z|frequency|The average value for the mean body acceleration (Z-axis) measurement.
+47|fBodyAcc-std()-X|frequency|The average value for the standard deviation body acceleration (X-axis) measurement.
+48|fBodyAcc-std()-Y|frequency|The average value for the standard deviation body acceleration (Y-axis) measurement.
+49|fBodyAcc-std()-Z|frequency|The average value for the standard deviation body acceleration (Z-axis) measurement.
+50|fBodyAcc-meanFreq()-X|frequency|The average value for the mean body acceleration (X-axis) measurement.
+51|fBodyAcc-meanFreq()-Y|frequency|The average value for the mean body acceleration (Y-axis) measurement.
+52|fBodyAcc-meanFreq()-Z|frequency|The average value for the mean body acceleration (Z-axis) measurement.
+53|fBodyAccJerk-mean()-X|frequency|The average value for the mean body jerk acceleration (X-axis) measurement.
+54|fBodyAccJerk-mean()-Y|frequency|The average value for the mean body jerk acceleration (Y-axis) measurement.
+55|fBodyAccJerk-mean()-Z|frequency|The average value for the mean body jerk acceleration (Z-axis) measurement.
+56|fBodyAccJerk-std()-X|frequency|The average value for the standard deviation body jerk acceleration (X-axis) measurement.
+57|fBodyAccJerk-std()-Y|frequency|The average value for the standard deviation body jerk acceleration (Y-axis) measurement.
+58|fBodyAccJerk-std()-Z|frequency|The average value for the standard deviation body jerk acceleration (Z-axis) measurement.
+59|fBodyAccJerk-meanFreq()-X|frequency|The average value for the mean body jerk acceleration (X-axis) measurement.
+60|fBodyAccJerk-meanFreq()-Y|frequency|The average value for the mean body jerk acceleration (Y-axis) measurement.
+61|fBodyAccJerk-meanFreq()-Z|frequency|The average value for the mean body jerk acceleration (Z-axis) measurement.
+62|fBodyGyro-mean()-X|frequency|The average value for the mean body gyroscope (X-axis) measurement.
+63|fBodyGyro-mean()-Y|frequency|The average value for the mean body gyroscope (Y-axis) measurement.
+64|fBodyGyro-mean()-Z|frequency|The average value for the mean body gyroscope (Z-axis) measurement.
+65|fBodyGyro-std()-X|frequency|The average value for the standard deviation body gyroscope (X-axis) measurement.
+66|fBodyGyro-std()-Y|frequency|The average value for the standard deviation body gyroscope (Y-axis) measurement.
+67|fBodyGyro-std()-Z|frequency|The average value for the standard deviation body gyroscope (Z-axis) measurement.
+68|fBodyGyro-meanFreq()-X|frequency|The average value for the mean body gyroscope (X-axis) measurement.
+69|fBodyGyro-meanFreq()-Y|frequency|The average value for the mean body gyroscope (Y-axis) measurement.
+70|fBodyGyro-meanFreq()-Z|frequency|The average value for the mean body gyroscope (Z-axis) measurement.
+71|fBodyAccMag-mean()|frequency|The average value for the mean body acceleration measurement.
+72|fBodyAccMag-std()|frequency|The average value for the standard deviation body acceleration measurement.
+73|fBodyAccMag-meanFreq()|frequency|The average value for the mean body acceleration measurement.
+74|fBodyBodyAccJerkMag-mean()|frequency|The average value for the mean body jerk acceleration measurement.
+75|fBodyBodyAccJerkMag-std()|frequency|The average value for the standard deviation body jerk acceleration measurement.
+76|fBodyBodyAccJerkMag-meanFreq()|frequency|The average value for the mean body jerk acceleration measurement.
+77|fBodyBodyGyroMag-mean()|frequency|The average value for the mean body gyroscope measurement.
+78|fBodyBodyGyroMag-std()|frequency|The average value for the standard deviation body gyroscope measurement.
+79|fBodyBodyGyroMag-meanFreq()|frequency|The average value for the mean body gyroscope measurement.
+80|fBodyBodyGyroJerkMag-mean()|frequency|The average value for the mean body jerk gyroscope measurement.
+81|fBodyBodyGyroJerkMag-std()|frequency|The average value for the standard deviation body jerk gyroscope measurement.
+82|FbodyBodyGyroJerkMag-meanFreq()|frequency|The average value for the mean body jerk gyroscope measurement.
