@@ -23,12 +23,7 @@ saveTempFilesDebug <- F # Set this to T to save intermediate files along the way
 readAndMerge <- function(folderName, featureNames, featuresToExtract, activityLabels) {
     # folderName parameter is either 'Input is either 'test' or 'train'
     
-    # To-do: For some reason I can't build the string... sigh
-    # xFilename <- cat('"', "UCI HAR Dataset/", folderName, "/X_", folderName, ".txt", '"', sep="")
-    # results in an error in the read.table call
-    # xFileName <- file.path("UCI HAR Dataset", folderName, "X_test.txt") is a start...
-    
-    # Plan B - hard code this
+    # Plan B - hard code this, couldn't quite get the file.path() function to work
     if (folderName == "test") {
         xFileName <- "UCI HAR Dataset/test/X_test.txt"
         yFileName <- "UCI HAR Dataset/test/y_test.txt"
@@ -44,20 +39,17 @@ readAndMerge <- function(folderName, featureNames, featuresToExtract, activityLa
     yTD <- read.table(yFileName)
     sTD <- read.table(sFileName)
     
-    # And do the merge - cbin the activities and subjects (???)
-    
-    # First, update all the column names in xTD
+    # Update all the column names in xTD
     names(xTD) <- featureNames
     if(saveTempFilesDebug) write.table(xTD, file="test-10-updated-names-xTD.txt") # For debugging purposes
     
     
     # We only want mean and standard deviation
-    if(saveTempFilesDebug) write.table(xTD, file="test-12-xTD-prenames.txt") # For debugging purposes
     # featuresToExtract is a list of TRUE and FALSE values corresponding to the feature names that include either std or mean
     xTD <- xTD[,featuresToExtract]
     if(saveTempFilesDebug) write.table(xTD, file="test-13-xTD-postnames.txt") # For debugging purposes
     
-    # Now add in the activity lables
+    # Now add in the activity labels
     yTD[,2] = activityLabels[yTD[,1]]
     names(yTD) <- c("Activity_ID", "Activity_Label")
     names(sTD) <- "subject"
@@ -109,6 +101,6 @@ tidyData <- allData %>%
     arrange(subject, Activity_ID)
 
 # And write the final result
-write.table(tidyData, file="output_data.txt", sep="\t")
+write.table(tidyData, file="output_data.txt", sep="\t", row.name=FALSE)
 
 # Done!
