@@ -19,4 +19,16 @@ The script was run against the data provided in the compressed file provided for
 The next section describes the output file ```output_data.txt```
 
 ## Data in the output file
-(including each variable and its unit)
+The first two columns describe the unique combination of:
+- (col 1) - subject - an integer ranging from 1 to 30 for each of the subjects in the experiment
+- (col 2) - Activity_Label	- an english string describing the activity, like WALKING_UPSTAIRS or STANDING
+
+The third column is a numeric representation of the Activity_Label:
+- (col 3) - Activity_ID - an integer ranging from 1 to 6 - ie 1 represents Activity_Label = WALKING
+
+The final set of columns are the average values observed for this subject doing this activity:
+
+Column #|Header string|Units|Description
+:------:|-------------|:---:|-----------
+4|tBodyAcc-mean()-X|unit|Descritption of the tBodyAcc-mean()-X
+5|tBodyAcc-mean()-Y|unit|Description of the tBodyAcc-mean()-Y
