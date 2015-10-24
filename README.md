@@ -1,9 +1,11 @@
 # Readme for my Coursera Getting and Cleaning Data project
 
-I created this repo to store and share my files for the Coursera Getting and Cleaning Data project
+I created this repo to store and share my files for the Coursera Getting and Cleaning Data project.
+- This readme file provides everything you need to run the script.
+- See the CodeBook to better understand the input, the transformations the script makes, and the output.
 
 ### Prerequisites
-- the script uses the data.table R package
+- the script uses both the ````data.table```` and the ````dplyr```` R packages
 - download and uncompress the files from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip including the 'UCI HAR Dataset' folder
 
 ### Running the script
