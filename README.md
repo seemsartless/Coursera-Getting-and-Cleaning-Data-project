@@ -1,6 +1,10 @@
 # Readme for my Coursera Getting and Cleaning Data project
 
-I created this repo to store and share my files for the Coursera Getting and Cleaning Data project
+I created this repo to store and share my files for the Coursera Getting and Cleaning Data project. 
+
+This readme file provides everything you need to run the script.
+
+See the CodeBook to better understand the input, the transformations the script makes, and the output.
 
 ### Prerequisites
 - the script uses the data.table R package
