@@ -1,20 +1,21 @@
-
+#
+# run_analysis.R by David Sky ( david.s.toronto@gmail.com ) October 2015 - v1.00
+#
 
 require("data.table") # RUn install.packages("data.table") if it isn't already installed
 require("dplyr") # Run install.packages("dplyr") if it isn't already installed
 
-
-# run_analysis.R by David Sky ( david.s.toronto@gmail.com ) October 2015 - v1.00
-#
-
-saveTempFilesDebug <- T
+saveTempFilesDebug <- F # Set this to T to save intermediate files along the way for debugging...
 
 # Steps:
-#   1. Merge training and test sets to create one data set
-#        1.1 load and merge all the details for the training set
-#        1.2 load and merge all the details for the test set
-#        1.3 merge the merged sets from 1.1. and 1.2.
-#   2. Extract mean and standard deviation for each measurement
+#   1. Load the metadata we need for processing (activity labels, feature names, etc...)
+#   2. Load and process the test data set with the function readAndMerge() 
+#        This includes loading the three files from disk, and cleaning them up
+#        to onliy include the columns we want to work with, etc...
+#   3. Repeat the above for the training data set with the function readAndMerge()
+#   4. Merge the test and training data sets into one using rbind()
+#   5. Summarize all the data we have down into a set of rows average value for each unique combination of 
+#        subject together with activity together with features
 #
 
 # Functions
@@ -70,6 +71,8 @@ readAndMerge <- function(folderName, featureNames, featuresToExtract, activityLa
 
 # Main script
 
+### Step 1. Load metadata
+
 # Load the activity lables from the text file, but we only want the second column
 activityLabels <- read.table("UCI HAR Dataset/activity_labels.txt")[,2]
 
@@ -80,31 +83,32 @@ featureNames <- read.table("UCI HAR Dataset/features.txt")[,2]
 # So generate a list of TRUE and FALSE for each column name in the features list, using grep
 featuresToExtract <- grepl("mean|std", featureNames)
 
-# Repeat the same process twice, once for the test data, once for the train data
-testingSetInp  <- readAndMerge("test", featureNames, featuresToExtract, activityLabels)
-# if(saveTempFilesDebug) write.table(testingSetInp, file="test-testingSetInp.txt") # for debugging purposes
 
+### Step 2. Load test data
+testingSetInp  <- readAndMerge("test", featureNames, featuresToExtract, activityLabels)
+if(saveTempFilesDebug) write.table(testingSetInp, file="test-testingSetInp.txt") # for debugging purposes
+
+###. Step 3. Load training data
 trainingSetInp <- readAndMerge("train", featureNames, featuresToExtract, activityLabels)
 if(saveTempFilesDebug) write.table(trainingSetInp, file="test-trainingSetInp.txt") # for debugging purposes
 
-# And now merge these two sets together
+### Step 4. Merge test and training data
 allData <- rbind(testingSetInp, trainingSetInp)
 if(saveTempFilesDebug) write.table(allData, file="test-allData.txt") # for debugging purposes
 
+
+### Step 5.
 # Now we have a cleaner, complete input dataset, time to do the calculations
 # to produce 'a text file that contains the average value for each unique combination of 
 # subject together with activity together with features.'
-# Subject Activity measurement1mean measurement2mean.... measurementXstd...
 
-# Will use dplyr: https://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html
-# dplyr arrange() to get the data together?
-# dplyr group_by() the two required columns subject and activity
-# dplyr sumarise_each()
-
+# Will use the dplyr library: https://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html
 tidyData <- allData %>%
-    group_by(subject, Activity_Label)
+    group_by(subject, Activity_Label) %>%
+    summarise_each(funs(mean)) %>%
+    arrange(subject, Activity_ID)
 
 # And write the final result
 write.table(tidyData, file="output_data.txt", sep="\t")
 
-
+# Done!
