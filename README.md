@@ -10,7 +10,7 @@ I created this repo to store and share my files for the Coursera Getting and Cle
 
 ### Running the script
 1. Uncompress the zip file mentioned in the Prerequisites
-2. Store the ```run_analysis.R``` script in the same folder that contains the ```UCI HAR Dataset``` folder 
+2. Store the ```run_analysis.R``` script in the same folder that contains the ```UCI HAR Dataset``` folder. The script expects to load files like ````UCI HAR Dataset/test/X_test.txt````
 3. Run the ```run_analysis.R``` script - if you are using RStudio you would follow these steps:
   1. Set the working directory to the folder in step 2. above with the ```setwd()``` function
   2. Run the script with the ```source("run_analysis.R")``` command
