@@ -36,9 +36,9 @@ The first two columns describe the unique combination of:
 The third column is a numeric representation of the Activity_Label:
 - (col 3) - Activity_ID - an integer ranging from 1 to 6 - ie 1 represents Activity_Label = WALKING
 
-The final set of columns are the average values observed for this subject doing this activity. More details on how these raw values were collected and processed is available in the ```features_info.txt``` file included in the original source data file.
+The final set of columns are the average values observed for this subject doing this activity. More details on how these raw values were collected and originally processed is available in the ```features_info.txt``` file included in the original source data file. Note that in each case the value has been normalized across the range of values, with each entry ranging between -1 and +1. The *Measures* column indicates whether the row measures time, or frequency.
 
-Column #|Header string|Units|Description
+Column #|Header string|Measures|Description
 :------:|-------------|:---:|-----------
 4|tBodyAcc-mean()-X|time|The average value for the mean body acceleration (X-axis) measurement.
 5|tBodyAcc-mean()-Y|time|The average value for the mean body acceleration (Y-axis) measurement.
